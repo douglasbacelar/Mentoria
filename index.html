@@ -32,7 +32,7 @@
 
         .slide {
             display: none;
-            padding: 60px;
+           padding: 60px 60px 100px 60px;
             min-height: 600px;
             animation: fadeIn 0.5s ease-in;
         }
@@ -272,6 +272,164 @@
             margin-right: 10px;
             font-size: 1.2rem;
         }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .slideshow-container {
+                margin: 10px;
+                max-width: 100%;
+            }
+
+            .slide {
+                padding: 30px 20px;
+                min-height: auto;
+            }
+
+            .slide h1 {
+                font-size: 2rem;
+                margin-bottom: 20px;
+            }
+
+            .slide h2 {
+                font-size: 1.5rem;
+                margin-bottom: 20px;
+            }
+
+            .slide h3 {
+                font-size: 1.2rem;
+            }
+
+            .intro-slide h1 {
+                font-size: 2.2rem;
+                margin-bottom: 30px;
+            }
+
+            .tech-badges {
+                justify-content: center;
+                gap: 8px;
+            }
+
+            .tech-badge {
+                font-size: 0.8rem;
+                padding: 6px 12px;
+            }
+
+            .overview-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 15px;
+            }
+
+            .overview-card {
+                padding: 20px 15px;
+            }
+
+            .overview-card h3 {
+                font-size: 1rem;
+                margin-bottom: 10px;
+            }
+
+            .overview-card p {
+                font-size: 0.8rem;
+            }
+
+            .phase-card {
+                padding: 20px;
+                margin: 15px 0;
+            }
+
+            .week-item {
+                padding: 15px;
+                margin: 10px 0;
+            }
+
+            .week-title {
+                font-size: 1rem;
+            }
+
+            .nav-container {
+                bottom: 10px;
+                gap: 10px;
+            }
+
+            .nav-btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+
+            .slide-counter {
+                padding: 6px 12px;
+                font-size: 0.8rem;
+            }
+
+            /* Seção do mentorado responsiva */
+            .slide h1 + div {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px;
+            }
+
+            .slide h1 + div img {
+                margin-right: 0;
+                margin-bottom: 20px;
+                width: 100px;
+                height: 100px;
+            }
+
+            .slide h1 + div div {
+                text-align: center !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .slide {
+                padding: 70px 15px;
+            }
+
+            .slide h1 {
+                font-size: 1.8rem;
+            }
+
+            .slide h2 {
+                font-size: 1.3rem;
+            }
+
+            .intro-slide h1 {
+                font-size: 1.9rem;
+            }
+
+            .overview-grid {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .tech-badges {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .tech-badge {
+                width: 80%;
+                text-align: center;
+            }
+
+            .nav-btn {
+                padding: 8px 16px;
+                font-size: 0.8rem;
+            }
+
+            .phase-card {
+                padding: 15px;
+            }
+
+            .week-item {
+                padding: 12px;
+            }
+
+            li {
+                font-size: 0.9rem;
+                line-height: 1.4;
+            }
+        }
     </style>
 </head>
 <body>
@@ -298,13 +456,15 @@
 
         <!-- Slide 2: Visão Geral -->
         <div class="slide">
-            <h1>📋 Visão Geral da Mentoria</h1>
-
+            <h1>📋 Visão Geral do Programa</h1>
+            
+            <!-- Seção do Mentorado -->
             <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 40px; background: linear-gradient(135deg, #f8f9ff 0%, #e8eeff 100%); padding: 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
                 <img src="./image.png" alt="Mentorado" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 5px solid #667eea; box-shadow: 0 10px 20px rgba(0,0,0,0.2); margin-right: 30px;">
                 <div style="text-align: left;">
                     <h2 style="color: #2c3e50; margin-bottom: 10px; background: none; -webkit-text-fill-color: #2c3e50;">Mentorado</h2>
                     <p style="color: #7f8c8d; font-size: 1.1rem; margin-bottom: 5px;"><strong>Desenvolvedor Junior → Pleno</strong></p>
+                    <p style="color: #667eea; font-size: 1rem;">13 semanas de crescimento técnico e profissional</p>
                 </div>
             </div>
             
@@ -357,7 +517,7 @@
                 </ul>
                 <div class="deliverable">
                     <div class="deliverable-title">📦 Entregáveis</div>
-                    Projeto Delivery App rodando +   Primeiras impressões e próximos passos
+                      Projeto Delivery App rodando +   Primeiras impressões e próximos passos
                 </div>
             </div>
 
@@ -380,14 +540,14 @@
                 <div class="week-title">Semana 3: Módulos + Controllers + Services</div>
                 <div class="week-objective">Objetivo: Criar estrutura modular e primeiros endpoints</div>
                 <ul>
-                    <li>Controllers, Services, Modules na prática</li>
+                     <li>Controllers, Services, Modules na prática</li>
                     <li>Dependency Injection e Decorators</li>
                     <li>CRUD básico com dados fake (Restaurantes + Cardápio)</li>
                     <li>Testes manuais com Postman/Insomnia/Bruno</li>
                 </ul>
                 <div class="deliverable">
                     <div class="deliverable-title">📦 Entregáveis</div>
-                    2 módulos organizados + APIs funcionando + Testes no Postman + Estrutura bem definida
+                     2 módulos organizados + APIs funcionando + Testes no Postman + Estrutura bem definida
                 </div>
             </div>
         </div>
@@ -409,7 +569,7 @@
                 </ul>
                 <div class="deliverable">
                     <div class="deliverable-title">📦 Entregáveis</div>
-                    Docker rodando + Primeira Entity funcionando + Dados persistindo
+                  Docker rodando + Primeira Entity funcionando + Dados persistindo
                 </div>
             </div>
 
@@ -417,7 +577,7 @@
                 <div class="week-title">Semana 5: Entities Completas + Relacionamentos</div>
                 <div class="week-objective">Objetivo: Modelar todo o domínio da aplicação</div>
                 <ul>
-                    <li>Entities: User, Order, MenuItem com relacionamentos</li>
+                      <li>Entities: User, Order, MenuItem com relacionamentos</li>
                     <li>Mapeamento completo do domínio do delivery</li>
                     <li>Queries com relacionamentos complexos</li>
                     <li>Seeds para dados de teste</li>
@@ -439,7 +599,7 @@
                 </ul>
                 <div class="deliverable">
                     <div class="deliverable-title">📦 Entregáveis</div>
-                    Sistema de validação completo + Use Cases implementados + Error handling
+                     Sistema de validação completo + Use Cases implementados + Error handling
                 </div>
             </div>
         </div>
@@ -453,14 +613,14 @@
                 <div class="week-title">Semana 7: Swagger + Testes</div>
                 <div class="week-objective">Objetivo: Documentação profissional e qualidade do código</div>
                 <ul>
-                    <li>Swagger completo para toda a API</li>
+                     <li>Swagger completo para toda a API</li>
                     <li>Testes unitários para Use Cases principais</li>
                     <li>README profissional e documentação técnica</li>
                     <li>Exemplos e guias de uso da API</li>
                 </ul>
                 <div class="deliverable">
                     <div class="deliverable-title">📦 Entregáveis</div>
-                    API totalmente documentada + Cobertura 70% + Guias de uso
+                       API totalmente documentada + Cobertura 70% + Guias de uso
                 </div>
             </div>
 
@@ -468,14 +628,14 @@
                 <div class="week-title">Semana 8: Autenticação JWT + Guards</div>
                 <div class="week-objective">Objetivo: Implementar sistema de login e segurança</div>
                 <ul>
-                    <li>JWT authentication completo</li>
+                       <li>JWT authentication completo</li>
                     <li>Guards para proteger rotas sensíveis</li>
                     <li>Sistema de registro e login para usuários</li>
                     <li>Middleware de autenticação</li>
                 </ul>
                 <div class="deliverable">
                     <div class="deliverable-title">📦 Entregáveis</div>
-                    Sistema de auth completo + Rotas protegidas + Registro/Login + Testes de segurança
+                     Sistema de auth completo + Rotas protegidas + Registro/Login + Testes de segurança
                 </div>
             </div>
 
@@ -483,13 +643,13 @@
                 <div class="week-title">Semana 9: RabbitMQ + Jobs Assíncronos</div>
                 <div class="week-objective">Objetivo: Implementar processamento em background</div>
                 <ul>
-                    <li>Setup RabbitMQ com Docker</li>
+                       <li>Setup RabbitMQ com Docker</li>
                     <li>Jobs de notificação por email</li>
                     <li>Monitoramento de filas</li>
                 </ul>
                 <div class="deliverable">
                     <div class="deliverable-title">📦 Entregáveis</div>
-                    RabbitMQ funcionando + Jobs assíncronos + Monitoramento de filas
+                       RabbitMQ funcionando + Jobs assíncronos + Monitoramento de filas
                 </div>
             </div>
         </div>
@@ -503,7 +663,7 @@
                 <div class="week-title">Semana 10: Cache + Performance</div>
                 <div class="week-objective">Objetivo: Otimizar performance da aplicação</div>
                 <ul>
-                    <li>Setup para cache distribuído</li>
+                     <li>Setup para cache distribuído</li>
                     <li>Implementar cache em endpoints críticos</li>
                     <li>Otimização de queries do banco</li>
                     <li>Métricas de performance e logs estruturados</li>
@@ -520,14 +680,14 @@
                 <div class="week-title">Semana 11: Clean Architecture + Análise do Projeto Real</div>
                 <div class="week-objective">Objetivo: Refatorar aplicação e analisar projeto em produção</div>
                 <ul>
-                    <li>Reestruturação completa seguindo Clean Architecture + DDD</li>
+                     <li>Reestruturação completa seguindo Clean Architecture + DDD</li>
                     <li>Walkthrough detalhado do projeto</li>
                     <li>Identificação de oportunidades de melhoria</li>
                     <li>Comparação entre os dois projetos (Antes e Pós)</li>
                 </ul>
                 <div class="deliverable">
                     <div class="deliverable-title">📦 Entregáveis</div>
-                    App refatorado + Análise completa do projeto + Propostas de melhorias
+                    App refatorado + Análise completa do marketplace + Propostas de melhorias
                 </div>
             </div>
         </div>
@@ -540,7 +700,7 @@
             <div class="phase-card">
                 <h3>Semana 12: Docker + AWS Fundamentals</h3>
                 <div class="week-objective">Objetivo: Preparar projeto para deploy e certificação AWS</div>
-
+                
                 <ul>
                      <li>Dockerização completa da aplicação</li>
                             <li>AWS Core Services (EC2, RDS, S3)</li>
@@ -566,7 +726,7 @@
 
                 <div class="deliverable">
                     <div class="deliverable-title">🎯 Entregáveis Finais</div>
-                    Preparação AWS completa + Mini Projeto delivery finalizado + Apresentação técnica
+                     Preparação AWS completa + Mini Projeto delivery finalizado + Apresentação técnica
                 </div>
             </div>
         </div>
@@ -577,9 +737,9 @@
             <h2>Planejamento de Carreira</h2>
             
             <div class="phase-card">
-                <h3>Objetivos de Curto Prazo (3 - 6 meses)</h3>
+               <h3>Objetivos de Curto Prazo (3 - 6 meses)</h3>
                 <ul>
-                    <li>Conquistar AWS Cloud Practitioner</li>
+                     <li>Conquistar AWS Cloud Practitioner</li>
                     <li>Contribuir ativamente no projeto do marketplace</li>
                     <li>Liderar pequenas features end-to-end</li>
                 </ul>
@@ -588,13 +748,13 @@
             <div class="phase-card">
                 <h3>Objetivos de Médio Prazo (6-12 meses)</h3>
                 <ul>
-                    <li>Contribuir com decisões importantes no projeto</li>
+                   <li>Contribuir com decisões importantes no projeto</li>
                 </ul>
             </div>
 
             <div class="success-criteria">
                 <h3>Competências Alcançadas</h3>
-                <div class="criteria-item">Autonomia completa em desenvolvimento backend</div>
+                 <div class="criteria-item">Autonomia completa em desenvolvimento backend</div>
                 <div class="criteria-item">Conhecimento sólido de arquitetura de software</div>
                 <div class="criteria-item">Experiência prática com tecnologias modernas</div>
                 <div class="criteria-item">Visão estratégica de produto e negócio</div>
@@ -608,7 +768,7 @@
             
             <div class="success-criteria">
                 <h3>Competências Técnicas</h3>
-                <div class="criteria-item">Desenvolver features completas independentemente</div>
+               <div class="criteria-item">Desenvolver features completas independentemente</div>
                 <div class="criteria-item">Entender e questionar decisões arquiteturais</div>
                 <div class="criteria-item">Escrever código seguindo padrões corretos</div>
                 <div class="criteria-item">Implementar testes unitários e de integração</div>
@@ -617,7 +777,7 @@
 
             <div class="success-criteria">
                 <h3>Competências Comportamentais</h3>
-                <div class="criteria-item">Contribuir positivamente nos code reviews</div>
+                 <div class="criteria-item">Contribuir positivamente nos code reviews</div>
                 <div class="criteria-item">Demonstrar ownership sobre o código produzido</div>
                 <div class="criteria-item">Comunicar problemas e soluções claramente</div>
                 <div class="criteria-item">Buscar aprendizado contínuo</div>
